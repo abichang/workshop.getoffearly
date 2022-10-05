@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ApplyScholarshipService {
-    public void apply(ApplicationForm form) {
+    public void apply(ApplicationForm form) throws StudentNotExistException {
 
     }
 }
