@@ -30,11 +30,12 @@ public class ApplyScholarshipControllerTest {
 
     @Test
     void all_ok() throws Exception {
-        ApplicationForm applicationForm = new ApplicationForm(9527L, 55688L);
+        ApplicationForm applicationForm = new ApplicationForm(9888L, 55688L);
 
         mockMvc.perform(
                         MockMvcRequestBuilders
-                                .post("/scholarship/apply", objectMapper.writeValueAsString(applicationForm))
+                                .post("/scholarship/apply")
+                                .content(objectMapper.writeValueAsString(applicationForm))
                                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(HttpStatus.OK.value()));
 
