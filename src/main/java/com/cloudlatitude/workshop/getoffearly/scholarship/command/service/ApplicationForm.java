@@ -1,4 +1,4 @@
-package com.cloudlatitude.workshop.getoffearly.scholarship.command;
+package com.cloudlatitude.workshop.getoffearly.scholarship.command.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,5 +1,6 @@
-package com.cloudlatitude.workshop.getoffearly.scholarship.command;
+package com.cloudlatitude.workshop.getoffearly.scholarship.command.adapter;
 
+import com.cloudlatitude.workshop.getoffearly.scholarship.command.service.ApplicationForm;
 import com.cloudlatitude.workshop.getoffearly.scholarship.command.service.ApplyScholarshipService;
 import com.cloudlatitude.workshop.getoffearly.scholarship.command.service.StudentNotExistException;
 import com.fasterxml.jackson.databind.ObjectMapper;
