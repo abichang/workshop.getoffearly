@@ -15,12 +15,16 @@ public class ApplyScholarshipControllerTest {
 
     @Test
     void all_ok() throws Exception {
-        Mockito.when(studentRepository.find(9528L))
-                .thenReturn(Optional.of(new Student()));
+        given_student_exists(9528L);
 
         when_apply(new ApplicationForm(9528L, 12345L));
 
         then_should_create(new Application(9528L, 12345L));
+    }
+
+    private void given_student_exists(long studentId) {
+        Mockito.when(studentRepository.find(studentId))
+                .thenReturn(Optional.of(new Student()));
     }
 
     private void when_apply(ApplicationForm applicationForm) {
