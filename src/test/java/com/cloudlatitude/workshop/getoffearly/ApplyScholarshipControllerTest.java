@@ -11,7 +11,7 @@ public class ApplyScholarshipControllerTest {
 
     private final ScholarshipRepository scholarshipRepository = Mockito.mock(ScholarshipRepository.class);
     private final StudentRepository studentRepository = Mockito.mock(StudentRepository.class);
-    private final ApplyScholarshipController controller = new ApplyScholarshipController(scholarshipRepository, studentRepository);
+    private final ApplyScholarshipController controller = new ApplyScholarshipController(new ApplyScholarshipService(scholarshipRepository, studentRepository));
 
     @Test
     void all_ok() throws Exception {
