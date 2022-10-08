@@ -35,12 +35,16 @@ public class ApplyScholarshipControllerTest {
     @Test
     void student_NOT_exists() throws Exception {
 
-        Mockito.when(studentRepository.find(9528L))
-                .thenReturn(Optional.empty());
+        given_student_not_exists(9528L);
 
         when_apply(new ApplicationForm(9528L, 12345L));
 
         verify(scholarshipRepository, never())
                 .create(any(Application.class));
+    }
+
+    private void given_student_not_exists(long studentId) {
+        Mockito.when(studentRepository.find(studentId))
+                .thenReturn(Optional.empty());
     }
 }
