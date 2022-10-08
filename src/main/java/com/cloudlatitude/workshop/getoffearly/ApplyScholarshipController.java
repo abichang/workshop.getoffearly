@@ -1,19 +1,14 @@
 package com.cloudlatitude.workshop.getoffearly;
 
 public class ApplyScholarshipController {
-    private final ScholarshipRepository scholarshipRepository;
-    private final StudentRepository studentRepository;
+    private final ApplyScholarshipService applyScholarshipService;
 
     public ApplyScholarshipController(ScholarshipRepository scholarshipRepository, StudentRepository studentRepository) {
 
-        this.scholarshipRepository = scholarshipRepository;
-        this.studentRepository = studentRepository;
+        applyScholarshipService = new ApplyScholarshipService(scholarshipRepository, studentRepository);
     }
 
     public void apply(ApplicationForm applicationForm) {
-        if (studentRepository.find(applicationForm.getStudentId()).isEmpty()) {
-            return;
-        }
-        scholarshipRepository.create(new Application(applicationForm.getStudentId(), applicationForm.getScholarshipId()));
+        applyScholarshipService.apply(applicationForm);
     }
 }
