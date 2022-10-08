@@ -9,6 +9,6 @@ public class ApplyScholarshipController {
     }
 
     public void apply(ApplicationForm applicationForm) {
-        scholarshipRepository.create(new Application(9527L, 12345L));
+        scholarshipRepository.create(new Application(applicationForm.getStudentId(), applicationForm.getScholarshipId()));
     }
 }

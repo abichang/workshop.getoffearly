@@ -12,9 +12,9 @@ public class ApplyScholarshipControllerTest {
         ScholarshipRepository scholarshipRepository = Mockito.mock(ScholarshipRepository.class);
         ApplyScholarshipController controller = new ApplyScholarshipController(scholarshipRepository);
 
-        controller.apply(new ApplicationForm(9527L, 12345L));
+        controller.apply(new ApplicationForm(9528L, 12345L));
 
         verify(scholarshipRepository, times(1))
-                .create(new Application(9527L, 12345L));
+                .create(new Application(9528L, 12345L));
     }
 }
