@@ -7,11 +7,12 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class ApplyScholarshipControllerTest {
+
+    private final ScholarshipRepository scholarshipRepository = Mockito.mock(ScholarshipRepository.class);
+    private final ApplyScholarshipController controller = new ApplyScholarshipController(scholarshipRepository);
+
     @Test
     void all_ok() throws Exception {
-        ScholarshipRepository scholarshipRepository = Mockito.mock(ScholarshipRepository.class);
-        ApplyScholarshipController controller = new ApplyScholarshipController(scholarshipRepository);
-
         controller.apply(new ApplicationForm(9528L, 12345L));
 
         verify(scholarshipRepository, times(1))
