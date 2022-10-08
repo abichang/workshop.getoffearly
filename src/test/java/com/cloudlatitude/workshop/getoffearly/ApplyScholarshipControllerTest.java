@@ -15,11 +15,15 @@ public class ApplyScholarshipControllerTest {
     void all_ok() throws Exception {
         when_apply(new ApplicationForm(9528L, 12345L));
 
-        verify(scholarshipRepository, times(1))
-                .create(new Application(9528L, 12345L));
+        then_should_create(new Application(9528L, 12345L));
     }
 
     private void when_apply(ApplicationForm applicationForm) {
         controller.apply(applicationForm);
+    }
+
+    private void then_should_create(Application application) {
+        verify(scholarshipRepository, times(1))
+                .create(application);
     }
 }
