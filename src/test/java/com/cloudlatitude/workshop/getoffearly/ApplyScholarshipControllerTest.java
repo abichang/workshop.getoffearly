@@ -14,6 +14,6 @@ public class ApplyScholarshipControllerTest {
 
         controller.apply();
 
-        verify(scholarshipRepository, times(1)).create();
+        verify(scholarshipRepository, times(1)).create(new Application(9527L, 12345L));
     }
 }

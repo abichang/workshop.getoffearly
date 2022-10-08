@@ -9,6 +9,6 @@ public class ApplyScholarshipController {
     }
 
     public void apply() {
-        scholarshipRepository.create();
+        scholarshipRepository.create(new Application(9527L, 12345L));
     }
 }
