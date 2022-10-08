@@ -13,9 +13,13 @@ public class ApplyScholarshipControllerTest {
 
     @Test
     void all_ok() throws Exception {
-        controller.apply(new ApplicationForm(9528L, 12345L));
+        when_apply(new ApplicationForm(9528L, 12345L));
 
         verify(scholarshipRepository, times(1))
                 .create(new Application(9528L, 12345L));
+    }
+
+    private void when_apply(ApplicationForm applicationForm) {
+        controller.apply(applicationForm);
     }
 }
