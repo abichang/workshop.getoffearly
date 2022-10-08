@@ -8,7 +8,7 @@ public class ApplyScholarshipController {
         this.scholarshipRepository = scholarshipRepository;
     }
 
-    public void apply() {
+    public void apply(ApplicationForm applicationForm) {
         scholarshipRepository.create(new Application(9527L, 12345L));
     }
 }
